@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+html, body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  background-color: #0f172a; /* nice dark navy background */
+  color: #f8fafc; /* light text for contrast */
+}
+
+/* ✅ Beautiful custom scrollbar */
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1e293b; /* dark blue-gray track */
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3b82f6, #60a5fa); /* blue gradient thumb */
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #2563eb, #3b82f6); /* brighter on hover */
+}
+
+/* Optional: smooth fade effect for sections */
+section {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Optional: make scroll animations smoother in framer-motion apps */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden; /* prevent horizontal scroll issues */
+}
