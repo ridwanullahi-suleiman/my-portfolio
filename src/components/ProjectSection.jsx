@@ -2,39 +2,40 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { varients } from "./data/constants";
 import brainwave from "../assets/Brainwave.png";
-
+import dental from "../assets/Dental.png";
+import caseI from "../assets/Case.png";
 
 const ProjectsSection = () => {
   const projects = [
     {
       id: 1,
-      title: "Project One",
+      title: "Brainwave AI",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi culpa laborum.",
+        "An interactive AI-powered website built with React and Framer Motion.",
       picture: brainwave,
-      tools: ["React", "Framer Motion", "CSS"],
+      tools: ["React", "Framer Motion", "TailwindCSS"],
+      link: "https://brainwavyy.vercel.app/",
     },
     {
       id: 2,
-      title: "Project Two",
+      title: "Dental Care",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi culpa laborum.",
-      picture: "/Brainwave.png",
-      tools: ["React", "Framer Motion", "CSS"],
+        "A clean, modern landing page for a dental service business.",
+      picture: dental,
+      tools: ["React", "TailwindCSS", "Framer Motion"],
+      link: "https://dental-gules-seven.vercel.app/",
     },
     {
       id: 3,
-      title: "Project Three",
+      title: "Case Study UI",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi culpa laborum.",
-      picture: "/Brainwave.png",
-      tools: ["React", "Framer Motion", "CSS"],
+        "Minimal and responsive UI case study project.",
+      picture: caseI,
+      tools: ["React", "CSS", "Framer Motion"],
     },
   ];
 
   const [[page], setPage] = useState([0, 0]);
-
-  // ✅ Fixed index logic to avoid white screen (safe wrap)
   const projectIndex = ((page % projects.length) + projects.length) % projects.length;
 
   const paginate = (newDirection) => {
@@ -57,11 +58,10 @@ const ProjectsSection = () => {
       {/* Project Display */}
       <motion.div
         key={page}
-        className="full flex flex-col items-center mt-20 border-2 border-primary bg-white/30 p-8 rounded-xl"
+        className="flex flex-col items-center mt-20 border-2 border-[#60A5FA] bg-white/20 backdrop-blur-sm p-8 rounded-xl shadow-md"
       >
-        {/* Navigation Arrows */}
+        {/* Navigation */}
         <div className="w-full justify-between flex z-[100] relative mb-6">
-          {/* Previous button */}
           <button
             className="text-white text-3xl"
             onClick={() => paginate(-1)}
@@ -70,11 +70,11 @@ const ProjectsSection = () => {
             <img
               width={50}
               height={50}
-src="https://img.icons8.com/ios-filled/50/60A5FA/circled-chevron-left.png"              alt="Previous"
+              src="https://img.icons8.com/ios-filled/50/60A5FA/circled-chevron-left.png"
+              alt="Previous"
             />
           </button>
 
-          {/* Next button */}
           <button
             className="text-white text-3xl"
             onClick={() => paginate(1)}
@@ -83,45 +83,58 @@ src="https://img.icons8.com/ios-filled/50/60A5FA/circled-chevron-left.png"      
             <img
               width={50}
               height={50}
-  src="https://img.icons8.com/ios-filled/50/60A5FA/circled-chevron-right.png" 
-             alt="Next"
+              src="https://img.icons8.com/ios-filled/50/60A5FA/circled-chevron-right.png"
+              alt="Next"
             />
           </button>
         </div>
 
-        {/* Project Image */}
+        {/* Image */}
         <div className="relative overflow-hidden rounded-xl border border-white/20 shadow-lg shadow-black/40 bg-gradient-to-b from-white/10 to-transparent p-[6px]">
-  <img
-    src={projects[projectIndex].picture}
-    alt={projects[projectIndex].title}
-    className="w-full md:max-w-[653px] md:h-[500px] object-cover rounded-lg scale-[0.99] hover:scale-100 transition-transform duration-300 ease-in-out"
-  />
-</div>
+          <a
+            href={projects[projectIndex].link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={projects[projectIndex].picture}
+              alt={projects[projectIndex].title}
+              className="w-full md:max-w-[653px] md:h-[500px] object-cover rounded-lg scale-[0.99] hover:scale-100 transition-transform duration-300 ease-in-out cursor-pointer"
+            />
+          </a>
+        </div>
 
-
-        {/* Project Title */}
+        {/* Title & Description */}
         <h2 className="text-white text-3xl mt-4 font-semibold">
           {projects[projectIndex].title}
         </h2>
-
-        {/* Project Description */}
         <p className="text-white mt-2 text-lg text-center max-w-lg">
           {projects[projectIndex].description}
         </p>
 
-        {/* Tools Used */}
-        <div className="text-primary text-md mt-2 font-bold">
-          <strong className="mr-3">Tools :</strong>
+        {/* Visit Button */}
+        <a
+          href={projects[projectIndex].link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4 inline-block bg-[#60A5FA] text-white font-semibold px-6 py-2 rounded-full hover:bg-white hover:text-[#60A5FA] transition duration-300"
+        >
+          Visit Project
+        </a>
+
+        {/* Tools */}
+        <div className="text-[#60A5FA] text-md mt-3 font-bold">
+          <strong className="mr-3">Tools:</strong>
           {projects[projectIndex].tools.join(", ")}
         </div>
 
-        {/* Dots Indicator */}
+        {/* Dots */}
         <div className="flex justify-center mt-10 z-[100] relative">
           {projects.map((_, index) => (
             <div
               key={index}
               className={`h-3 w-3 rounded-full mx-1 ${
-                index === projectIndex ? "bg-primary" : "bg-white/50"
+                index === projectIndex ? "bg-[#60A5FA]" : "bg-white/50"
               }`}
             ></div>
           ))}
