@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { varients } from "./data/constants";
 
 // ✅ FIXED all image import paths
-import brainwave from "../assets/brainwave.png";
+import brainWave from "../assets/brainwave.png";
 import dental from "../assets/dental.png";
 import caseI from "../assets/case.png";
 
@@ -14,7 +14,7 @@ const ProjectsSection = () => {
       title: "Brainwave AI",
       description:
         "An interactive AI-powered website built with React and Framer Motion.",
-      picture: brainwave,
+      picture: brainWave,
       tools: ["React", "Framer Motion", "TailwindCSS"],
       link: "https://brainwavyy.vercel.app/",
     },
