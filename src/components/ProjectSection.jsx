@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { varients } from "./data/constants";
-import brainWave from "../assets/brainwave.png";
+
+// ✅ FIXED all image import paths
+import brainwave from "../assets/brainwave.png";
 import dental from "../assets/dental.png";
 import caseI from "../assets/case.png";
 
@@ -12,7 +14,7 @@ const ProjectsSection = () => {
       title: "Brainwave AI",
       description:
         "An interactive AI-powered website built with React and Framer Motion.",
-      picture: brainWave,
+      picture: brainwave,
       tools: ["React", "Framer Motion", "TailwindCSS"],
       link: "https://brainwavyy.vercel.app/",
     },
@@ -28,15 +30,15 @@ const ProjectsSection = () => {
     {
       id: 3,
       title: "Case Study UI",
-      description:
-        "Minimal and responsive UI case study project.",
+      description: "Minimal and responsive UI case study project.",
       picture: caseI,
       tools: ["React", "CSS", "Framer Motion"],
     },
   ];
 
   const [[page], setPage] = useState([0, 0]);
-  const projectIndex = ((page % projects.length) + projects.length) % projects.length;
+  const projectIndex =
+    ((page % projects.length) + projects.length) % projects.length;
 
   const paginate = (newDirection) => {
     setPage([page + newDirection, newDirection]);
@@ -91,17 +93,25 @@ const ProjectsSection = () => {
 
         {/* Image */}
         <div className="relative overflow-hidden rounded-xl border border-white/20 shadow-lg shadow-black/40 bg-gradient-to-b from-white/10 to-transparent p-[6px]">
-          <a
-            href={projects[projectIndex].link}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          {projects[projectIndex].link ? (
+            <a
+              href={projects[projectIndex].link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={projects[projectIndex].picture}
+                alt={projects[projectIndex].title}
+                className="w-full md:max-w-[653px] md:h-[500px] object-cover rounded-lg scale-[0.99] hover:scale-100 transition-transform duration-300 ease-in-out cursor-pointer"
+              />
+            </a>
+          ) : (
             <img
               src={projects[projectIndex].picture}
               alt={projects[projectIndex].title}
-              className="w-full md:max-w-[653px] md:h-[500px] object-cover rounded-lg scale-[0.99] hover:scale-100 transition-transform duration-300 ease-in-out cursor-pointer"
+              className="w-full md:max-w-[653px] md:h-[500px] object-cover rounded-lg"
             />
-          </a>
+          )}
         </div>
 
         {/* Title & Description */}
@@ -113,14 +123,16 @@ const ProjectsSection = () => {
         </p>
 
         {/* Visit Button */}
-        <a
-          href={projects[projectIndex].link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-4 inline-block bg-[#60A5FA] text-white font-semibold px-6 py-2 rounded-full hover:bg-white hover:text-[#60A5FA] transition duration-300"
-        >
-          Visit Project
-        </a>
+        {projects[projectIndex].link && (
+          <a
+            href={projects[projectIndex].link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-block bg-[#60A5FA] text-white font-semibold px-6 py-2 rounded-full hover:bg-white hover:text-[#60A5FA] transition duration-300"
+          >
+            Visit Project
+          </a>
+        )}
 
         {/* Tools */}
         <div className="text-[#60A5FA] text-md mt-3 font-bold">
