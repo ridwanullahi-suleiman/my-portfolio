@@ -87,10 +87,10 @@ const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { id: 1, title: "Home", href: "#" },
-    { id: 2, title: "About", href: "#" },
-    { id: 3, title: "Services", href: "#" },
-    { id: 4, title: "Contact", href: "#" },
+    { id: 1, title: "Home", href: "#home" },
+    { id: 2, title: "Services", href: "#service" },
+    { id: 3, title: "Projects", href: "#project" },
+    { id: 4, title: "Contact", href: "#contact" },
   ];
 
   const toggleMenu = () => setIsOpen((prev) => !prev);

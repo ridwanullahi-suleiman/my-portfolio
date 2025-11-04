@@ -4,7 +4,7 @@ import { services, varients } from "./data/constants";
 
 const ServiceSection = () => {
   return (
-    <div id="services" className="container max-w-screen-xl mx-auto px-4 mt-40">
+    <div id="service" className="container max-w-screen-xl mx-auto px-4 mt-40">
       <motion.h1
         variants={varients}
         initial="offscreen"

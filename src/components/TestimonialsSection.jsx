@@ -1,32 +1,36 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {varients } from "./data/constants";
-import me from "../assets/me.png";
+import user from "../assets/user.png";
+import user2 from "../assets/user2.jpg";
+import user3 from "../assets/user3.jpg";
+import user4 from "../assets/user4.jpg";
+
 
 
 const Testimonials = [
   {
     id: 1,
     name: "John Doe",
-    picture: me,
+    picture: user,
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, pariatur.",
   },
   {
     id: 2,
     name: "Jane Smith",
-    picture: me,
+    picture: user2,
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, pariatur.",
   },
   {
     id: 3,
     name: "Emily Doe",
-    picture: me,
+    picture: user3,
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, pariatur.",
   },
   {
     id: 4,
     name: "emjay sow",
-    picture: me,
+    picture: user4,
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, pariatur.",
   },
 ];

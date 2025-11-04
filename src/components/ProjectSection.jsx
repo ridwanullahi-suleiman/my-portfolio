@@ -45,7 +45,7 @@ const ProjectsSection = () => {
   };
 
   return (
-    <div id="projects" className="container max-w-screen-xl mx-auto mt-40 px-4">
+    <div id="project" className="container max-w-screen-xl mx-auto mt-40 px-4">
       {/* Header */}
       <motion.h1
         variants={varients}

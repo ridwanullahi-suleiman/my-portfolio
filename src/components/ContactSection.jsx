@@ -3,10 +3,10 @@ import { FaGithub, FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { motion, stagger, useAnimate, animate } from "framer-motion";
 
 const buttons = [
-  { id: 1, icon: <FaGithub />, name: "Github", link: "https://github.com/yourusername" },
-  { id: 2, icon: <FaFacebook />, name: "Facebook", link: "https://facebook.com/yourprofile" },
-  { id: 3, icon: <FaInstagram />, name: "Instagram", link: "https://instagram.com/yourusername" },
-  { id: 4, icon: <FaWhatsapp />, name: "Whatsapp", link: "https://wa.me/yourwhatsappnumber" },
+   { id: 1, icon: <FaGithub />, name: "Github", link: "https://github.com/ridwanullahi-suleiman" },
+    { id: 2, icon: <FaFacebook />, name: "Facebook", link: "https://www.facebook.com/share/1Bkw8U99fA/" },
+    { id: 3, icon: <FaInstagram />, name: "Instagram", link: "https://www.instagram.com/justdevrid?igsh=OXE3Y2F5dXNxN2Nr" },
+    { id: 4, icon: <FaWhatsapp />, name: "Whatsapp", link: "https://wa.me/message/C42UGMUWGGC7E1" }, // ✅ Put your WhatsApp number here
 ];
 
 const ContactSection = () => {

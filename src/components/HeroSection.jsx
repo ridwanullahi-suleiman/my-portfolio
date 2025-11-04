@@ -16,10 +16,10 @@ import { FaGithub, FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 // ✅ FIXED duplicate id and incorrect WhatsApp link
 const buttons = [
-  { id: 1, icon: <FaGithub />, name: "Github", link: "https://github.com/yourusername" },
-  { id: 2, icon: <FaFacebook />, name: "Facebook", link: "https://facebook.com/yourprofile" },
-  { id: 3, icon: <FaInstagram />, name: "Instagram", link: "https://instagram.com/yourusername" },
-  { id: 4, icon: <FaWhatsapp />, name: "Whatsapp", link: "https://wa.me/234XXXXXXXXXX" }, // ✅ Put your WhatsApp number here
+  { id: 1, icon: <FaGithub />, name: "Github", link: "https://github.com/ridwanullahi-suleiman" },
+  { id: 2, icon: <FaFacebook />, name: "Facebook", link: "https://www.facebook.com/share/1Bkw8U99fA/" },
+  { id: 3, icon: <FaInstagram />, name: "Instagram", link: "https://www.instagram.com/justdevrid?igsh=OXE3Y2F5dXNxN2Nr" },
+  { id: 4, icon: <FaWhatsapp />, name: "Whatsapp", link: "https://wa.me/message/C42UGMUWGGC7E1" }, // ✅ Put your WhatsApp number here
 ];
 
 const Hero = () => {
@@ -68,7 +68,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative w-full h-screen flex items-center justify-center overflow-hidden text-white">
+    <div id="home" className="relative w-full h-screen flex items-center justify-center overflow-hidden text-white">
       {/* Background glow */}
       <motion.div
         initial={{ opacity: 1 }}
@@ -223,15 +223,18 @@ const Hero = () => {
                     Loading ...
                   </div>
                 )}
-                <img
-                  src={mySelf}
-                  alt="My portrait"
-                  onLoad={() => {
-                    setIsLoaded(true);
-                    setIsLoading(false);
-                  }}
-                  className="rounded-full border-4 border-blue-400 p-1 object-cover shadow-lg shadow-blue-500/40 w-56 sm:w-52 md:w-50 lg:w-56"
-                />
+             <img
+  src={mySelf}
+  alt="My portrait"
+  width={500}
+  height={500}
+  onLoad={() => {
+    setIsLoaded(true);
+    setIsLoading(false);
+  }}
+  className="rounded-full border-4 border-blue-400 p-1 object-cover shadow-lg shadow-blue-500/40 w-56 h-56"
+/>
+
               </motion.div>
             </div>
           </div>
