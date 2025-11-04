@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { varients } from "./data/constants";
 
 // ✅ FIXED all image import paths
-import brainWave from "../assets/brainwave.png";
+import brainWave from "../assets/brainWave.png";
 import dental from "../assets/dental.png";
 import caseI from "../assets/case.png";
 
