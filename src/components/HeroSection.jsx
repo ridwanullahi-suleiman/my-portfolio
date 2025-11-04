@@ -254,7 +254,7 @@
 
 import React, { useState } from "react";
 import { motion, stagger, useAnimate } from "framer-motion";
-import mySelf from "/src/assets/mySelf.png"; // ✅ Correct image import
+import myself from "/src/assets/myself.png"; // ✅ Correct image import
 
 import {
   randomNumberBetween,
@@ -478,7 +478,7 @@ const onHoverEnd = () => {
                   </div>
                 )}
                 <img
-                  src={mySelf}
+                  src={myself}
                   alt="My portrait"
                   width={100}
                   height={100}

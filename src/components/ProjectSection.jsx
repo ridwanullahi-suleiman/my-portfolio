@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { varients } from "./data/constants";
-import brainwave from "../assets/Brainwave.png";
-import dental from "../assets/Dental.png";
-import caseI from "../assets/Case.png";
+import brainwave from "../assets/brainwave.png";
+import dental from "../assets/dental.png";
+import caseI from "../assets/case.png";
 
 const ProjectsSection = () => {
   const projects = [

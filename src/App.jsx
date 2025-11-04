@@ -1,4 +1,3 @@
-import './App.css'
 import React, { Suspense, lazy } from "react";
 import LoadingSinner from './components/LoadingSpinner'
 import ThreeBackground from './components/ThreeBackground';
