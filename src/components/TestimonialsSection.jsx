@@ -1,32 +1,32 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {varients } from "./data/constants";
-import brainwave from "../assets/Brainwave.png";
+import me from "../assets/me.png";
 
 
 const Testimonials = [
   {
     id: 1,
     name: "John Doe",
-    picture: brainwave,
+    picture: me,
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, pariatur.",
   },
   {
     id: 2,
     name: "Jane Smith",
-    picture: brainwave,
+    picture: me,
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, pariatur.",
   },
   {
     id: 3,
     name: "Emily Doe",
-    picture: brainwave,
+    picture: me,
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, pariatur.",
   },
   {
     id: 4,
     name: "emjay sow",
-    picture: brainwave,
+    picture: me,
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, pariatur.",
   },
 ];
