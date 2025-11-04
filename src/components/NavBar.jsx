@@ -1,85 +1,3 @@
-
-// // NavBar.jsx
-// // NavBar.jsx
-// import React, { useRef } from "react";
-// import { motion, useCycle } from "framer-motion";
-// // import { useDimension } from "./useDimension";
-// import { useDimension } from "./data/use-dimensions";
-
-// const sidebarVariants = {
-//   open: (height = 1000) => ({
-//     clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
-//     transition: {
-//       type: "spring",
-//       stiffness: 20,
-//       restDelta: 2,
-//     },
-//   }),
-//   closed: {
-//     clipPath: "circle(30px at 40px 40px)",
-//     transition: {
-//       delay: 0.5,
-//       type: "spring",
-//       stiffness: 400,
-//       damping: 40,
-//     },
-//   },
-// };
-
-// const MenuToggle = ({ toggle }) => (
-//   <button
-//     onClick={toggle}
-//     className="absolute top-5 left-5 w-[40px] flex items-center justify-center"
-//   >
-//     <motion.div
-//       animate={{ rotate: 0 }}
-//       className="bg-white w-6 h-1 rounded mb-1"
-//     />
-//     <motion.div
-//       animate={{ rotate: 0 }}
-//       className="bg-white w-6 h-1 rounded mb-1"
-//     />
-//     <motion.div
-//       animate={{ rotate: 0 }}
-//       className="bg-white w-6 h-1 rounded"
-//     />
-//   </button>
-// );
-
-// const NavBar = () => {
-//   const [isOpen, toggleOpen] = useCycle(false, true);
-//   const containerRef = useRef(null);
-//   const { height } = useDimension(containerRef);
-
-//   return (
-//     <motion.nav
-//       className="fixed top-0 left-0 w-full h-full bg-black text-white"
-//       initial={false}
-//       animate={isOpen ? "open" : "closed"}
-//       custom={height}
-//       ref={containerRef}
-//     >
-//       <motion.div
-//         className="absolute top-0 left-0 w-64 h-full bg-black/70 backdrop-blur-md"
-//         variants={sidebarVariants}
-//       >
-//         <ul className="mt-20 space-y-4 p-4">
-//           <li>Home</li>
-//           <li>Projects</li>
-//           <li>Contact</li>
-//         </ul>
-//       </motion.div>
-
-//       <MenuToggle toggle={() => toggleOpen()} />
-//     </motion.nav>
-//   );
-// };
-
-// export default NavBar;
-
-
-
-// src/components/NavBar.jsx
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -95,8 +13,13 @@ const NavBar = () => {
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
 
+  const handleMenuClick = () => {
+    // Close menu when a link is clicked
+    setIsOpen(false);
+  };
+
   return (
-    <div className="fixed top-0 left-0 h-screen w-fit z-50 ">
+    <div className="fixed top-0 left-0 h-screen w-fit z-50">
       {/* Toggle Button */}
       <button
         onClick={toggleMenu}
@@ -146,7 +69,7 @@ const NavBar = () => {
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: -250, opacity: 0 }}
             transition={{ type: "spring", stiffness: 70, damping: 15 }}
-            className="fixed top-0 left-0 h-full backdrop:blur-10 w-64 bg-[#111] text-white shadow-2xl p-6 flex flex-col justify-between z-[998]"
+            className="fixed top-0 left-0 h-full w-64 p-6 flex flex-col justify-between z-[998] bg-[#111]/80 backdrop-blur-md text-white shadow-2xl"
           >
             <ul className="space-y-6 mt-12">
               {navItems.map((item) => (
@@ -157,7 +80,8 @@ const NavBar = () => {
                 >
                   <a
                     href={item.href}
-                    className="block text-lg font-semibold text-gray-300 hover:text-[#66c61c] transition"
+                    onClick={handleMenuClick} // Close menu on click
+                    className="block text-lg font-semibold text-gray-300 hover:text-blue-500 transition"
                   >
                     {item.title}
                   </a>
@@ -176,4 +100,3 @@ const NavBar = () => {
 };
 
 export default NavBar;
-
